@@ -10,8 +10,6 @@ import { RouterView, useRoute } from 'vue-router'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import MobileDetect from 'mobile-detect'
 import useSidebar from '@/hooks/useSidebar'
-
-// import '@fortawesome/fontawesome-free/js/all.js'
 import '@/assets/styles/style.scss'
 
 const { closeSidebar } = useSidebar()
