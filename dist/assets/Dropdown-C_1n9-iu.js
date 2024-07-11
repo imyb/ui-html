@@ -1,3 +1,0 @@
-import{_ as s}from"./UicCode-DNPPZw6_.js";import{c as o,a as e,b as a,w as c,e as t,o as r,t as i}from"./index-D5cpHXts.js";const _={class:"uic-body"},n=t("h1",{class:"uic-title"},"Dropdown",-1),d=t("div",{class:"uic-preview"},"preview",-1),h={__name:"Dropdown",setup(l){return(p,u)=>(r(),o("div",_,[n,e(),d,e(),a(s,null,{default:c(()=>[e(i(`
-      code...
-      `))]),_:1})]))}};export{h as default};

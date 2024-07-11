@@ -1,0 +1,3 @@
+import{_ as a}from"./UicCode-BxegwAnv.js";import{_ as c,c as _,a as e,b as d,w as i,o as p,t as r,p as n,d as l,e as s}from"./index-CzPLbs73.js";const o=t=>(n("data-v-f67ed7ff"),t=t(),l(),t),u={class:"uic-body"},f=o(()=>s("h1",{class:"uic-title"},"Button",-1)),h=o(()=>s("h2",{class:"uic-title"},"Default",-1)),m=o(()=>s("div",{class:"uic-preview"},"preview",-1)),v={__name:"Button",setup(t){return(B,w)=>(p(),_("div",u,[f,e(),h,e(),m,e(),d(a,null,{default:i(()=>[e(r(`
+      code...
+      `))]),_:1})]))}},S=c(v,[["__scopeId","data-v-f67ed7ff"]]);export{S as default};
