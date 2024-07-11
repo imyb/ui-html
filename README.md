@@ -4,4 +4,4 @@ html / css / javascript
 
 ...
 
-https://imyb.github.io/ui-html
+<a href="https://imyb.github.io/ui-html" target="_blank"> https://imyb.github.io/ui-html </a>
