@@ -1,0 +1,60 @@
+.tabnav {
+  .tablist {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0.1rem solid #ddd;
+
+    .tabitem {
+      margin-bottom: -0.1rem;
+      border-bottom: 0.1rem solid transparent;
+
+      .tab {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 100%;
+        padding: 0.8rem 1.6rem;
+        text-decoration: none;
+        color: #999;
+
+        &:hover:not([disabled]) {
+          color: #666;
+        }
+
+        &[disabled] {
+          cursor: not-allowed;
+        }
+      }
+
+      &.is-active {
+        border-bottom: 0.1rem solid #000;
+
+        .tab {
+          color: #000;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tabcontent {
+}
+
+.tabpanel {
+  position: absolute;
+  visibility: hidden;
+  padding: 16px;
+
+  &.is-active {
+    position: relative;
+    visibility: inherit;
+  }
+}

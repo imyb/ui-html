@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+:where(img, picture, video, canvas, svg) {
+  max-width: 100%;
+  border-style: none;
+}
+
+:where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(button, input:is([type='button' i], [type='reset' i], [type='submit' i])) {
+  appearance: button;
+  -webkit-appearance: button;
+}
+
+:where(a) {
+  text-decoration: none;
+}
+
+:where(ul, ol) {
+  list-style: none;
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

@@ -1,0 +1,3 @@
+import{_ as s}from"./UicCode-CHTKcROx.js";import{c as o,a as e,b as a,w as c,e as t,o as i,t as _}from"./index-ByihOz2g.js";const r={class:"uic-body"},l=t("h1",{class:"uic-title"},"Tooltip",-1),n=t("div",{class:"uic-preview"},"preview",-1),h={__name:"Tooltip",setup(d){return(p,u)=>(i(),o("div",r,[l,e(),n,e(),a(s,null,{default:c(()=>[e(_(`
+      code...
+      `))]),_:1})]))}};export{h as default};

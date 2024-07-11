@@ -1,0 +1,28 @@
+
+@use '../utils' as *;
+
+:root {
+  @each $name, $size in $breakpoints {
+    --breakpoint-#{$name} : #{$size};
+  }
+}
+
+:where(html, body) {
+  height: 100%;
+}
+
+:where(html) {
+  font-size: 62.5%;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(body) {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Malgun Gothic', 'Segoe UI',
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+#app {
+  height: 100%;
+}
