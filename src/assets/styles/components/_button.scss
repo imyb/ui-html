@@ -2,15 +2,16 @@
   --btn-base-color: #373bf6;
   --btn-base-text-color: #fff;
 
-  --btn-height: 38px;
-  --btn-padding-x: 16px;
-  --btn-padding-y: 4px;
-  --btn-border-radius: 4px;
+  --btn-height: 4.8rem;
+  --btn-min-width: var(--btn-height);
+  --btn-padding-x: 1.6rem;
+  --btn-padding-y: 0.4rem;
+  --btn-border-radius: 0.8rem;
   --btn-border-style: solid;
   --btn-border-width: 0;
   --btn-border-color: var(--btn-base-color);
   --btn-background-color: var(--btn-base-color);
-  --btn-font-size: 16px;
+  --btn-font-size: 1.6rem;
   --btn-font-weight: normal;
   --btn-line-height: normal;
   --btn-text-color: var(--btn-base-text-color);
@@ -39,6 +40,7 @@
   justify-content: center;
   width: auto;
   height: var(--btn-height);
+  min-width: var(--btn-min-width);
   margin: 0;
   padding: var(--btn-padding-y) var(--btn-padding-x);
   border-radius: var(--btn-border-radius);
@@ -69,28 +71,28 @@
   }
 
   &[data-size='xs'] {
-    --btn-height: 22px;
-    --btn-padding-x: 6px;
-    --btn-padding-y: 2px;
-    --btn-font-size: 12px;
+    --btn-height: 3.2rem;
+    --btn-padding-x: 0.6rem;
+    --btn-padding-y: 0.2rem;
+    --btn-font-size: 1.2rem;
   }
   &[data-size='sm'] {
-    --btn-height: 30px;
-    --btn-padding-x: 8px;
-    --btn-padding-y: 4px;
-    --btn-font-size: 14px;
+    --btn-height: 4rem;
+    --btn-padding-x: 0.8rem;
+    --btn-padding-y: 0.4rem;
+    --btn-font-size: 1.4rem;
   }
   &[data-size='lg'] {
-    --btn-height: 46px;
-    --btn-padding-x: 16px;
-    --btn-padding-y: 6px;
-    --btn-font-size: 18px;
+    --btn-height: 5.6rem;
+    --btn-padding-x: 1.8rem;
+    --btn-padding-y: 0.6rem;
+    --btn-font-size: 1.8rem;
   }
   &[data-size='xl'] {
-    --btn-height: 54px;
-    --btn-padding-x: 22px;
-    --btn-padding-y: 5px;
-    --btn-font-size: 24px;
+    --btn-height: 6.4rem;
+    --btn-padding-x: 2.4rem;
+    --btn-padding-y: 0.6rem;
+    --btn-font-size: 2.4rem;
   }
 
   &[data-type*='prime'] {
@@ -126,7 +128,7 @@
   }
 
   &[data-type*='outline'] {
-    --btn-border-width: 2px;
+    --btn-border-width: 0.2rem;
     --btn-background-color: transparent;
     --btn-text-color: var(--btn-base-color);
 
@@ -147,20 +149,23 @@
   }
 
   &[data-addon*='icon'] {
-    > i {
-      // width: 16px;
-      // height: 16px;
+    > i,
+    svg {
+      // width: 1.6rem;
+      // height: 1.6rem;
       // background: red;
       margin: 0 0.8rem 0 0;
     }
     &[data-addon*='right'] {
-      > i {
+      > i,
+      svg {
         margin: 0 0 0 0.8rem;
         order: 2;
       }
     }
     &[data-addon*='only'] {
-      > i {
+      > i,
+      svg {
         margin: 0;
       }
     }

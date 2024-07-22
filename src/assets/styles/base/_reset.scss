@@ -26,7 +26,6 @@
 
 :where(button, input:is([type='button' i], [type='reset' i], [type='submit' i])) {
   appearance: button;
-  -webkit-appearance: button;
 }
 
 :where(a) {

@@ -10,6 +10,11 @@ const router = createRouter({
       redirect: '/button',
     },
     ...sidebarNavItems,
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('@/views/NotFound.vue'),
+    },
   ],
 });
 

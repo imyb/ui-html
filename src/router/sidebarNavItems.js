@@ -9,12 +9,6 @@ const sidebarNavItems = [
     disabled: false,
   },
   {
-    path: '/pagination',
-    name: 'Pagination',
-    component: () => import('@/views/Pagination.vue'),
-    disabled: false,
-  },
-  {
     path: '/input',
     name: 'Input',
     component: () => import('@/views/Input.vue'),
