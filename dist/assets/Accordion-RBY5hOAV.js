@@ -1,3 +1,0 @@
-import{_ as s}from"./UicCode-BUT9K_AX.js";import{c,a as e,b as o,w as a,d as t,o as i,t as r}from"./index-D7Em8hLV.js";const _={class:"uic-body"},d=t("h1",{class:"uic-title"},"Accordion",-1),n=t("div",{class:"uic-preview"},"preview",-1),h={__name:"Accordion",setup(l){return(p,u)=>(i(),c("div",_,[d,e(),n,e(),o(s,null,{default:a(()=>[e(r(`
-      code...
-      `))]),_:1})]))}};export{h as default};

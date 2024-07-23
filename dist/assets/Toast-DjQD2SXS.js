@@ -1,3 +1,0 @@
-import{_ as s}from"./UicCode-BUT9K_AX.js";import{c as a,a as e,b as o,w as c,d as t,o as i,t as _}from"./index-D7Em8hLV.js";const r={class:"uic-body"},d=t("h1",{class:"uic-title"},"Toast",-1),n=t("div",{class:"uic-preview"},"preview",-1),h={__name:"Toast",setup(l){return(p,u)=>(i(),a("div",r,[d,e(),n,e(),o(s,null,{default:c(()=>[e(_(`
-      code...
-      `))]),_:1})]))}};export{h as default};

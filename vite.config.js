@@ -22,5 +22,6 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1600,
   },
-  base: process.env.NODE_ENV === 'production' ? '/ui-html/' : '/',
+  // base: process.env.NODE_ENV === 'production' ? '/ui-html/' : '/',
+  base: './',
 });
