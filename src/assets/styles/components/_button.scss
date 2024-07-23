@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .btn {
   --btn-base-color: #373bf6;
   --btn-base-text-color: #fff;
@@ -8,7 +10,7 @@
   --btn-padding-y: 0.4rem;
   --btn-border-radius: 0.8rem;
   --btn-border-style: solid;
-  --btn-border-width: 0;
+  --btn-border-width: 0rem;
   --btn-border-color: var(--btn-base-color);
   --btn-background-color: var(--btn-base-color);
   --btn-font-size: 1.6rem;
@@ -64,7 +66,7 @@
     opacity: var(--btn-disabled-opacity);
     cursor: not-allowed;
   }
-  &:hover:not([disabled]) {
+  @include hover(':not([disabled])') {
     border-color: var(--btn-hover-border-color);
     background-color: var(--btn-hover-background-color);
     color: var(--btn-hover-text-color);
@@ -169,5 +171,66 @@
         margin: 0;
       }
     }
+  }
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.8rem;
+
+  & + .btn-group {
+    margin-top: 1.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  &.tight {
+    gap: 0;
+
+    .btn {
+      position: relative;
+      margin-left: calc(var(--btn-border-width) * -1);
+
+      @include hover {
+        z-index: 1;
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+      &:first-child:not(:only-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &:last-child:not(:only-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.btn-panel {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+
+  & + .btn-panel {
+    margin-top: 1.6rem;
+  }
+
+  .left,
+  .right {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .left {
+    margin-right: auto;
+  }
+  .right {
+    margin-left: auto;
   }
 }

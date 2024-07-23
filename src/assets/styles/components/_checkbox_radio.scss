@@ -1,0 +1,224 @@
+.input-check {
+  --input-check-border-color: #ddd;
+  --input-check-background-color: #fff;
+
+  --input-check-checked-border-color: #444;
+  --input-check-checked-background-color: #444;
+
+  display: inline-flex;
+
+  input[type='checkbox'] {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0.4rem;
+    border: 0.1rem solid #ddd;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2NjY2NjYyIgZD0iTTQzOC42IDEwNS40YzEyLjUgMTIuNSAxMi41IDMyLjggMCA0NS4zbC0yNTYgMjU2Yy0xMi41IDEyLjUtMzIuOCAxMi41LTQ1LjMgMGwtMTI4LTEyOGMtMTIuNS0xMi41LTEyLjUtMzIuOCAwLTQ1LjNzMzIuOC0xMi41IDQ1LjMgMEwxNjAgMzM4LjcgMzkzLjQgMTA1LjRjMTIuNS0xMi41IDMyLjgtMTIuNSA0NS4zIDB6Ii8+PC9zdmc+');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1rem 1.3rem;
+    font: inherit;
+    color: inherit;
+    appearance: none;
+
+    &:checked {
+      border-color: #444;
+      background-color: #444;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTQzOC42IDEwNS40YzEyLjUgMTIuNSAxMi41IDMyLjggMCA0NS4zbC0yNTYgMjU2Yy0xMi41IDEyLjUtMzIuOCAxMi41LTQ1LjMgMGwtMTI4LTEyOGMtMTIuNS0xMi41LTEyLjUtMzIuOCAwLTQ1LjNzMzIuOC0xMi41IDQ1LjMgMEwxNjAgMzM4LjcgMzkzLjQgMTA1LjRjMTIuNS0xMi41IDMyLjgtMTIuNSA0NS4zIDB6Ii8+PC9zdmc+');
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+
+      & + .label {
+        opacity: 0.5;
+      }
+    }
+  }
+  .label {
+    display: inline-flex;
+    margin-left: 0.8rem;
+  }
+
+  @at-root .input-checkgroup.reverse &,
+    &.reverse {
+    flex-direction: row-reverse;
+
+    .label {
+      margin-left: 0;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.input-radio {
+  --input-radio-border-color: #ddd;
+  --input-radio-background-color: #fff;
+
+  --input-radio-checked-border-color: #444;
+  --input-radio-checked-background-color: #444;
+
+  display: inline-flex;
+
+  input[type='radio'] {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 50%;
+    border: 0.1rem solid #ddd;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2RkZGRkZCIgZD0iTTI1NiA1MTJBMjU2IDI1NiAwIDEgMCAyNTYgMGEyNTYgMjU2IDAgMSAwIDAgNTEyeiIvPjwvc3ZnPg==');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    font: inherit;
+    color: inherit;
+    appearance: none;
+
+    &:checked {
+      border-color: #444;
+      background-color: #fff;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iIzQ0NDQ0NCIgZD0iTTI1NiA1MTJBMjU2IDI1NiAwIDEgMCAyNTYgMGEyNTYgMjU2IDAgMSAwIDAgNTEyeiIvPjwvc3ZnPg==');
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+
+      & + .label {
+        opacity: 0.5;
+      }
+    }
+  }
+  .label {
+    display: inline-flex;
+    margin-left: 0.8rem;
+  }
+
+  @at-root .input-checkgroup.reverse &,
+    &.reverse {
+    flex-direction: row-reverse;
+
+    .label {
+      margin-left: 0;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.input-switch {
+  --input-switch-track-width: 4.8rem;
+  --input-switch-track-height: 2.4rem;
+  --input-switch-track-background-color: #eee;
+
+  --input-switch-lever-width: 2.4rem;
+  --input-switch-lever-height: 2.4rem;
+  --input-switch-lever-background-color: #ddd;
+
+  --input-switch-checked-track-background-color: #ddd;
+  --input-switch-checked-lever-background-color: #444;
+
+  display: inline-flex;
+
+  input[type='checkbox'] {
+    display: inline-flex;
+    position: absolute;
+    width: 4.8rem;
+    height: 2.4rem;
+    border-radius: 2.4rem;
+    appearance: none;
+  }
+  .lever {
+    display: inline-flex;
+    position: relative;
+    width: 4.8rem;
+    height: 2.4rem;
+    border-radius: 2.4rem;
+    background-color: #eee;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background-color: #ddd;
+
+      transition:
+        left 0.3s ease 0s,
+        background-color 0.3s ease 0s;
+    }
+  }
+  .label {
+    display: inline-flex;
+    margin-left: 0.8rem;
+  }
+
+  input[type='checkbox'][disabled] {
+    opacity: 0.5;
+
+    & + .lever {
+      opacity: 0.5;
+
+      & + .label {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  input[type='checkbox']:checked {
+    & + .lever {
+      background-color: #ddd;
+      &::after {
+        left: calc(100% - 2.4rem);
+        background-color: #444;
+      }
+    }
+  }
+
+  @at-root .input-checkgroup.reverse &,
+    &.reverse {
+    flex-direction: row-reverse;
+
+    .label {
+      margin-left: 0;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.input-checkgroup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.6rem 1.6rem;
+  align-items: flex-start;
+
+  & + .input-checkgroup {
+    margin-top: 1.6rem;
+  }
+
+  &.inline {
+    flex-direction: row;
+  }
+
+  &.reverse {
+    align-items: flex-end;
+
+    // .input-check,
+    // .input-radio,
+    // .input-switch {
+    //   flex-direction: row-reverse;
+
+    //   .label {
+    //     margin-left: 0;
+    //     margin-right: 0.8rem;
+    //   }
+    // }
+  }
+}

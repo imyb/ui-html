@@ -15,6 +15,24 @@ const sidebarNavItems = [
     disabled: false,
   },
   {
+    path: '/select',
+    name: 'Select',
+    component: () => import('@/views/Select.vue'),
+    disabled: false,
+  },
+  {
+    path: '/checkbox-radio',
+    name: 'Checkbox / Radio',
+    component: () => import('@/views/CheckboxRadio.vue'),
+    disabled: false,
+  },
+  {
+    path: '/form',
+    name: 'Form',
+    component: () => import('@/views/Form.vue'),
+    disabled: false,
+  },
+  {
     path: '/list',
     name: 'List',
     component: () => import('@/views/List.vue'),

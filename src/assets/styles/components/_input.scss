@@ -43,144 +43,43 @@
   }
 }
 
-.input-select {
-  select {
-    overflow: hidden;
+.input-textarea {
+  --input-textarea-color: #666;
+  --input-textarea-placeholder-color: #ccc;
+
+  --input-textarea-disabled-color: #999;
+  --input-textarea-disabled-background-color: #eee;
+
+  textarea {
     display: inline-flex;
     align-items: center;
     width: 100%;
-    height: 4.8rem;
+    min-height: 12rem;
     margin: 0;
-    padding: 0.8rem 4rem 0.8rem 1.6rem;
+    padding: 0.8rem 1.6rem;
     border: 0.1rem solid #ddd;
     border-radius: 0.8rem;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIzMy40IDQwNi42YzEyLjUgMTIuNSAzMi44IDEyLjUgNDUuMyAwbDE5Mi0xOTJjMTIuNS0xMi41IDEyLjUtMzIuOCAwLTQ1LjNzLTMyLjgtMTIuNS00NS4zIDBMMjU2IDMzOC43IDg2LjYgMTY5LjRjLTEyLjUtMTIuNS0zMi44LTEyLjUtNDUuMyAwcy0xMi41IDMyLjggMCA0NS4zbDE5MiAxOTJ6Ii8+PC9zdmc+');
-    background-size: 1.5rem 1.5rem;
-    background-repeat: no-repeat;
-    background-position: right 1.6rem center;
     background-color: #fff;
     font: inherit;
     font-size: 1.6rem;
     letter-spacing: inherit;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     color: #666;
     opacity: 1;
-    resize: none;
+    resize: vertical;
     appearance: none;
     box-sizing: border-box;
 
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &[readonly] {
+    }
+
     &[disabled] {
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iIzk5OTk5OSIgZD0iTTIzMy40IDQwNi42YzEyLjUgMTIuNSAzMi44IDEyLjUgNDUuMyAwbDE5Mi0xOTJjMTIuNS0xMi41IDEyLjUtMzIuOCAwLTQ1LjNzLTMyLjgtMTIuNS00NS4zIDBMMjU2IDMzOC43IDg2LjYgMTY5LjRjLTEyLjUtMTIuNS0zMi44LTEyLjUtNDUuMyAwcy0xMi41IDMyLjggMCA0NS4zbDE5MiAxOTJ6Ii8+PC9zdmc+');
       background-color: #eee;
       color: #999;
       cursor: not-allowed;
     }
-  }
-}
-
-.input-check {
-  --input-check-border-color: #ddd;
-  --input-check-background-color: #fff;
-
-  --input-check-checked-border-color: #444;
-  --input-check-checked-background-color: #444;
-
-  display: inline-flex;
-
-  input[type='checkbox'] {
-    width: 2.4rem;
-    height: 2.4rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 0.4rem;
-    border: 0.1rem solid #ddd;
-    background-color: #fff;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2NjY2NjYyIgZD0iTTQzOC42IDEwNS40YzEyLjUgMTIuNSAxMi41IDMyLjggMCA0NS4zbC0yNTYgMjU2Yy0xMi41IDEyLjUtMzIuOCAxMi41LTQ1LjMgMGwtMTI4LTEyOGMtMTIuNS0xMi41LTEyLjUtMzIuOCAwLTQ1LjNzMzIuOC0xMi41IDQ1LjMgMEwxNjAgMzM4LjcgMzkzLjQgMTA1LjRjMTIuNS0xMi41IDMyLjgtMTIuNSA0NS4zIDB6Ii8+PC9zdmc+');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 1rem 1.3rem;
-    font: inherit;
-    color: inherit;
-    appearance: none;
-
-    &:checked {
-      border-color: #444;
-      background-color: #444;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTQzOC42IDEwNS40YzEyLjUgMTIuNSAxMi41IDMyLjggMCA0NS4zbC0yNTYgMjU2Yy0xMi41IDEyLjUtMzIuOCAxMi41LTQ1LjMgMGwtMTI4LTEyOGMtMTIuNS0xMi41LTEyLjUtMzIuOCAwLTQ1LjNzMzIuOC0xMi41IDQ1LjMgMEwxNjAgMzM4LjcgMzkzLjQgMTA1LjRjMTIuNS0xMi41IDMyLjgtMTIuNSA0NS4zIDB6Ii8+PC9zdmc+');
-    }
-
-    &[disabled] {
-      opacity: 0.5;
-
-      & + .label {
-        opacity: 0.5;
-      }
-    }
-  }
-  .label {
-    display: inline-flex;
-    margin-left: 0.8rem;
-  }
-}
-
-.input-radio {
-  --input-radio-border-color: #ddd;
-  --input-radio-background-color: #fff;
-
-  --input-radio-checked-border-color: #444;
-  --input-radio-checked-background-color: #444;
-
-  display: inline-flex;
-
-  input[type='radio'] {
-    width: 2.4rem;
-    height: 2.4rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 50%;
-    border: 0.1rem solid #ddd;
-    background-color: #fff;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2RkZGRkZCIgZD0iTTI1NiA1MTJBMjU2IDI1NiAwIDEgMCAyNTYgMGEyNTYgMjU2IDAgMSAwIDAgNTEyeiIvPjwvc3ZnPg==');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 1rem 1rem;
-    font: inherit;
-    color: inherit;
-    appearance: none;
-
-    &:checked {
-      border-color: #444;
-      background-color: #fff;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iIzQ0NDQ0NCIgZD0iTTI1NiA1MTJBMjU2IDI1NiAwIDEgMCAyNTYgMGEyNTYgMjU2IDAgMSAwIDAgNTEyeiIvPjwvc3ZnPg==');
-    }
-
-    &[disabled] {
-      opacity: 0.5;
-
-      & + .label {
-        opacity: 0.5;
-      }
-    }
-  }
-  .label {
-    display: inline-flex;
-    margin-left: 0.8rem;
-  }
-}
-
-.input-checkgroup {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1.6rem 1.6rem;
-  align-items: flex-start;
-
-  & + .input-checkgroup {
-    margin-top: 1.6rem;
-  }
-
-  &.inline {
-    flex-direction: row;
   }
 }

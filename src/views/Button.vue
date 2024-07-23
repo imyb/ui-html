@@ -150,6 +150,82 @@
       <button type="button" class="btn" data-addon="icon-only" aria-label="label"><i class="fa-solid fa-check"></i></button>
       ` }}
     </UicCode>
+
+
+    <h2 class="uic-title">Button Group</h2>
+    <div class="uic-preview">
+      <div class="btn-group">
+        <button type="button" class="btn" data-type="outline">button</button>
+        <button type="button" class="btn" data-type="outline">button</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn" data-type="">button</button>
+        <button type="button" class="btn" data-type="second">button</button>
+        <button type="button" class="btn" data-type="third">button</button>
+      </div>
+
+      <div class="btn-group tight">
+        <button type="button" class="btn" data-type="outline">button</button>
+        <button type="button" class="btn" data-type="outline">button</button>
+      </div>
+      <div class="btn-group tight">
+        <button type="button" class="btn" data-type="">button</button>
+        <button type="button" class="btn" data-type="second">button</button>
+        <button type="button" class="btn" data-type="third">button</button>
+      </div>
+    </div>
+    <UicCode>
+      {{ `
+      <div class="btn-group">
+        btn...
+      </div>
+
+      <div class="btn-group tight">
+        btn...
+      </div>
+      ` }}
+    </UicCode>
+
+    <h2 class="uic-title">Button Panel</h2>
+    <div class="uic-preview">
+      <div class="btn-panel">
+        <div class="left">
+          <button type="button" class="btn" data-type="outline">button</button>
+          <button type="button" class="btn" data-type="outline">button</button>
+        </div>
+        <div class="right">
+          <div class="btn-group tight">
+            <button type="button" class="btn" data-type="outline">button</button>
+            <button type="button" class="btn" data-type="outline">button</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-panel">
+        <div class="btn-group tight">
+          <button type="button" class="btn" data-type="">button</button>
+          <button type="button" class="btn" data-type="second">button</button>
+          <button type="button" class="btn" data-type="third">button</button>
+        </div>
+      </div>
+    </div>
+    <UicCode>
+      {{ `
+      <div class="btn-panel">
+        <div class="left">
+          btn, btn-group...
+        </div>
+        <div class="right">
+          btn, btn-group...
+        </div>
+      </div>
+
+      <div class="btn-panel">
+        btn, btn-group...
+      </div>
+      ` }}
+    </UicCode>
+
   </div>
 </template>
 
@@ -157,10 +233,17 @@
 import UicCode from '@/components/UicCode.vue';
 </script>
 
-<style lang="scss" scoped>
-.uic-preview {
+<style lang="scss">
+:where(.uic-preview) {
   .btn {
     margin-bottom: 0.5rem;
+  }
+
+  .btn-group,
+  .btn-panel {
+    .btn {
+      margin-bottom: 0;
+    }
   }
 }
 </style>
