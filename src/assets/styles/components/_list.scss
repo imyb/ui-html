@@ -1,0 +1,126 @@
+.list {
+  & + .list {
+    margin-top: 2.4rem;
+  }
+
+  > li {
+    display: flex;
+    position: relative;
+    margin: 0.4rem 0;
+    font: inherit;
+    color: inherit;
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+    }
+
+    .label {
+      flex: 0 0 auto;
+      margin-right: 0.8rem;
+      font-weight: 700;
+    }
+  }
+
+  &ol {
+  }
+
+  &.square {
+    > li {
+      padding-left: 1.6rem;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        width: 0.4rem;
+        height: 0.4rem;
+        background: #000;
+      }
+    }
+  }
+
+  &.circle {
+    > li {
+      padding-left: 1.6rem;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background: #000;
+      }
+    }
+  }
+
+  &.dash {
+    > li {
+      padding-left: 1.6rem;
+
+      &:before {
+        content: '-';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: auto;
+        height: auto;
+        background: transparent;
+      }
+    }
+  }
+
+  &.star {
+    > li {
+      padding-left: 1.6rem;
+
+      &:before {
+        content: '*';
+        position: absolute;
+        left: 0;
+        top: 0.3rem;
+        width: auto;
+        height: auto;
+        background: transparent;
+      }
+    }
+  }
+
+  &.number {
+    > li {
+      padding-left: 0;
+
+      &:before {
+        content: attr(value) '.';
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        margin-right: 0.8rem;
+        background: transparent;
+      }
+    }
+  }
+
+  &.none {
+    > li {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

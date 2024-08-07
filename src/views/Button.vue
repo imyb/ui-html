@@ -235,7 +235,7 @@ import UicCode from '@/components/UicCode.vue';
 
 <style lang="scss">
 :where(.uic-preview) {
-  .btn {
+  > .btn {
     margin-bottom: 0.5rem;
   }
 

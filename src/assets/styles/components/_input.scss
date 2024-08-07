@@ -5,6 +5,9 @@
   --input-text-disabled-color: #999;
   --input-text-disabled-background-color: #eee;
 
+  display: block;
+  width: 100%;
+
   input {
     display: inline-flex;
     align-items: center;
@@ -24,6 +27,22 @@
     appearance: none;
     box-sizing: border-box;
 
+    $this: &;
+
+    @at-root {
+      .field {
+        &.success #{$this} {
+          border-color: var(--field-success-color);
+        }
+        &.error #{$this} {
+          border-color: var(--field-error-color);
+        }
+        &.warning #{$this} {
+          border-color: var(--field-warning-color);
+        }
+      }
+    }
+
     &::placeholder {
       color: #ccc;
     }
@@ -41,6 +60,11 @@
       cursor: not-allowed;
     }
   }
+
+  &.inline {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 .input-textarea {
@@ -49,6 +73,9 @@
 
   --input-textarea-disabled-color: #999;
   --input-textarea-disabled-background-color: #eee;
+
+  display: block;
+  width: 100%;
 
   textarea {
     display: inline-flex;
@@ -69,6 +96,22 @@
     appearance: none;
     box-sizing: border-box;
 
+    $this: &;
+
+    @at-root {
+      .field {
+        &.success #{$this} {
+          border-color: var(--field-success-color);
+        }
+        &.error #{$this} {
+          border-color: var(--field-error-color);
+        }
+        &.warning #{$this} {
+          border-color: var(--field-warning-color);
+        }
+      }
+    }
+
     &::placeholder {
       color: #ccc;
     }
@@ -82,4 +125,18 @@
       cursor: not-allowed;
     }
   }
+
+  &.inline {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.input-group {
+  // display: flex;
+  // flex-wrap: wrap;
+  // > * {
+  //   flex: 0 0 auto;
+  //   // width: auto;
+  // }
 }

@@ -17,6 +17,20 @@
       ` }}
     </UicCode>
 
+    <h2 class="uic-title">Inline</h2>
+    <div class="uic-preview">
+      <div class="input-text inline"><input type="text" placeholder="input text" /></div>
+      <div class="input-text inline"><input type="text" placeholder="input text" value="readonly" readonly /></div>
+      <div class="input-text inline"><input type="text" placeholder="input text" value="disabled" disabled /></div>
+    </div>
+    <UicCode>
+      {{ `
+      <div class="input-text inline"><input type="text" placeholder="input text" /></div>
+      <div class="input-text inline"><input type="text" placeholder="input text" value="readonly" readonly /></div>
+      <div class="input-text inline"><input type="text" placeholder="input text" value="disabled" disabled /></div>
+      ` }}
+    </UicCode>
+
 
     <h2 class="uic-title">Textarea</h2>
     <div class="uic-preview">
@@ -63,10 +77,8 @@
 import UicCode from '@/components/UicCode.vue';
 </script>
 
-<style lang="scss">
-:where(.uic-preview) {
-  .input-text {
-    margin-bottom: 0.8rem;
-  }
+<style lang="scss" scoped>
+.input-text {
+  margin-bottom: 0.8rem;
 }
 </style>

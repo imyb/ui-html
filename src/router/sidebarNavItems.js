@@ -33,15 +33,15 @@ const sidebarNavItems = [
     disabled: false,
   },
   {
-    path: '/list',
-    name: 'List',
-    component: () => import('@/views/List.vue'),
-    disabled: false,
-  },
-  {
     path: '/table',
     name: 'Table',
     component: () => import('@/views/Table.vue'),
+    disabled: false,
+  },
+  {
+    path: '/list',
+    name: 'List',
+    component: () => import('@/views/List.vue'),
     disabled: false,
   },
   {

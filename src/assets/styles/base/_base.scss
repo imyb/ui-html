@@ -1,9 +1,9 @@
-
+@use 'sass:math';
 @use '../utils' as *;
 
 :root {
   @each $name, $size in $breakpoints {
-    --breakpoint-#{$name} : #{$size};
+    --breakpoint-#{$name}: #{$size};
   }
 }
 
@@ -18,11 +18,17 @@
 }
 
 :where(body) {
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Malgun Gothic', 'Segoe UI',
-    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Malgun Gothic',
+    'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
 }
 
 #app {
   height: 100%;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: calc(100% / 12 * $i);
+  }
 }

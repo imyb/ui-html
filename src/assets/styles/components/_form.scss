@@ -1,0 +1,264 @@
+@use 'sass:math';
+@use '../utils' as *;
+
+:root {
+  --fields-margin-x: 1.6rem;
+  --fields-margin-y: 0.8rem;
+  --fieldset-margin-top: 1.6rem;
+
+  --field-success-color: #4a9c4c;
+  --field-warning-color: #cb7d00;
+  --field-error-color: #b70c15;
+}
+
+.field-label {
+  flex: none;
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.field-msg {
+  flex: none;
+  display: none;
+  width: 100%;
+  margin-top: 0.8rem;
+
+  & + .fieldset,
+  & + .fields,
+  & + .field {
+    margin-top: var(--fieldset-margin-top);
+  }
+
+  &.success {
+    display: block;
+    color: var(--field-success-color);
+  }
+  &.error {
+    display: block;
+    color: var(--field-error-color);
+  }
+  &.warning {
+    display: block;
+    color: var(--field-warning-color);
+  }
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 4.8rem;
+
+  @at-root {
+    :not(.fields) > & + .field,
+    :not(.fields) > & + .fields,
+    :not(.fields) > & + .fieldset {
+      margin-top: var(--fieldset-margin-top);
+    }
+  }
+
+  > .fields,
+  > .field {
+    flex: 1 1 calc(var(--breakpoint-sm) / 2);
+  }
+
+  &.addon {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  &.success {
+  }
+  &.error {
+  }
+  &.warning {
+  }
+
+  &.inline {
+    @extend %field-inline;
+  }
+}
+
+%field-inline {
+  @include media('>sm') {
+    &[class*='col-'] {
+      flex: none;
+      width: auto;
+      min-width: 0;
+    }
+
+    > .fields,
+    > .field {
+      flex: 0 0 auto;
+    }
+    > .input-text,
+    > .input-textarea,
+    > .input-select {
+      width: auto;
+    }
+  }
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--fields-margin-y) var(--fields-margin-x);
+
+  & + .field,
+  & + .fields,
+  & + .fieldset {
+    margin-top: var(--fieldset-margin-top);
+  }
+
+  > .field-label {
+    margin-bottom: 0;
+  }
+
+  > .field-msg {
+    margin-top: 0;
+  }
+
+  > .fields,
+  > .field {
+    flex: 1 1 calc(var(--breakpoint-sm) / 2);
+  }
+
+  &.row {
+    align-items: center;
+
+    > .field-label {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  &.nowrap {
+    @include media('>sm') {
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &.success {
+  }
+  &.error {
+  }
+  &.warning {
+  }
+
+  &.inline {
+    @extend %fields-inline;
+  }
+}
+
+%fields-inline {
+  @include media('>sm') {
+    &,
+    .field {
+      &[class*='col-'] {
+        flex: none;
+        width: auto;
+        min-width: 0;
+      }
+    }
+
+    > .fields,
+    > .field {
+      flex: 0 0 auto;
+    }
+    > .field {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+}
+
+.fields,
+.field {
+  &.col-00 {
+    flex: none;
+    width: 0%;
+  }
+  &.col-block {
+    flex: none;
+    width: 100%;
+  }
+  &.col-auto {
+    flex: none;
+    width: auto;
+  }
+  @for $i from 0 through 12 {
+    &.col-#{$i} {
+      $per: calc(100% / 12 * $i);
+
+      @if $i == 0 {
+        $per: 1%;
+      }
+
+      flex: 1 1 auto;
+      width: calc($per - var(--fields-margin-x));
+      min-width: calc(var(--breakpoint-sm) / 2);
+    }
+  }
+}
+
+.fieldset {
+  & + .field,
+  & + .fields,
+  & + .fieldset {
+    margin-top: var(--fieldset-margin-top);
+  }
+
+  &.inline {
+    .field {
+      @extend %field-inline;
+    }
+    .fields {
+      @extend %fields-inline;
+    }
+  }
+}
+
+.data-panel {
+  .panel-item {
+    & + .panel-item {
+      margin-top: 4.8rem;
+    }
+    .panel-header {
+      margin-bottom: 1.6rem;
+    }
+
+    &.row {
+      @include media('>sm') {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .panel-header {
+          flex: none;
+          width: calc(100% / 12 * 2);
+          min-width: 12rem;
+          max-width: 16rem;
+          margin-right: 2.4rem;
+          word-break: keep-all;
+          word-wrap: break-word;
+        }
+
+        .panel-body {
+          flex: 1 0 calc(var(--breakpoint-sm) / 2);
+        }
+
+        // > .panel-header + .panel-body > .fieldset:first-child,
+        // > .panel-header + .panel-body > .fields:first-child,
+        // > .panel-header + .panel-body > .field:first-child,
+        // > .panel-header + .fieldset,
+        // > .panel-header + .fields,
+        // > .panel-header + .field {
+        //   margin-top: -1.2rem;
+        // }
+      }
+    }
+  }
+}

@@ -64,6 +64,38 @@
       ` }}
     </UicCode>
 
+    <h2 class="uic-title">Inline</h2>
+    <div class="uic-preview">
+      <div class="input-select inline">
+        <select>
+          <option>select</option>
+          <option>select111</option>
+          <option>select222</option>
+          <option>select333</option>
+          <option>select444</option>
+        </select>
+      </div>
+
+      <div class="input-select inline">
+        <select disabled>
+          <option>select disabeld</option>
+          <option>select111</option>
+          <option>select222</option>
+          <option>select333</option>
+          <option>select444</option>
+        </select>
+      </div>
+    </div>
+    <UicCode>
+    {{ `
+    <div class="input-select inline">
+      <select>
+        <option>select</option>
+        ...
+      </select>
+    </div>
+    ` }}
+    </UicCode>
   </div>
 </template>
 
@@ -71,10 +103,8 @@
 import UicCode from '@/components/UicCode.vue';
 </script>
 
-<style lang="scss">
-:where(.uic-preview) {
-  .input-select {
-    margin-bottom: 0.8rem;
-  }
+<style lang="scss" scoped>
+.input-select {
+  margin-bottom: 0.8rem;
 }
 </style>
