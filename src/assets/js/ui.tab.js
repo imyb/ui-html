@@ -22,25 +22,25 @@ const uiTab = function () {
     }
 
     document.querySelectorAll(SELECTOR.TABLIST).forEach((tablist, index) => {
-      if (initTabLists.length && initTabLists[index] === tablist) {
-        return;
-      }
+      // if (initTabLists.length && initTabLists[index] === tablist) {
+      // return;
+      // }
 
       tablist.addEventListener('keydown', handleKeydownTabList);
 
-      initTabLists.push(tablist);
+      // initTabLists.push(tablist);
     });
 
     document.querySelectorAll(SELECTOR.TAB).forEach((tab, index) => {
-      if (initTabs.length && initTabs[index] === tab.dataset.name) {
-        return;
-      }
+      // if (initTabs.length && initTabs[index] === tab.dataset.name) {
+      //   return;
+      // }
 
       setupTab(tab);
 
       tab.addEventListener('click', handleClickTab);
 
-      initTabs.push(tab.dataset.name);
+      // initTabs.push(tab.dataset.name);
     });
   };
 
