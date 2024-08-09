@@ -1,14 +1,22 @@
+@use '../utils' as *;
+
 .tabnav {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  display: flex;
+
   .tablist {
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex: 0 0 auto;
     display: flex;
     list-style: none;
+    min-width: 100%;
     margin: 0;
     padding: 0;
     border-bottom: 0.1rem solid #ddd;
 
     .tabitem {
+      flex: 0 0 auto;
       margin-bottom: -0.1rem;
       border-bottom: 0.1rem solid transparent;
 
@@ -16,12 +24,17 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        width: 100%;
         height: 100%;
+        margin: 0;
         padding: 0.8rem 1.6rem;
+        border: 0;
+        background: none;
         text-decoration: none;
         color: #999;
+        cursor: pointer;
 
-        &:hover:not([disabled]) {
+        @include hover(':not([disabled])') {
           color: #666;
         }
 
@@ -36,11 +49,25 @@
         .tab {
           color: #000;
 
-          &:hover {
+          @include hover {
             color: inherit;
           }
         }
       }
+    }
+  }
+
+  &.full {
+    .tablist {
+      flex: 1 0 auto;
+      .tabitem {
+        flex: 1 0 auto;
+      }
+    }
+  }
+  &.center {
+    .tablist {
+      justify-content: center;
     }
   }
 }
