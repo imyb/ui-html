@@ -16,32 +16,45 @@ const uiTab = function () {
     keyboardTabList(e);
   };
 
-  const initTab = () => {
+  const init = () => {
     if (!document.querySelectorAll(SELECTOR.TAB).length) {
       return;
     }
 
     document.querySelectorAll(SELECTOR.TABLIST).forEach((tablist, index) => {
-      // if (initTabLists.length && initTabLists[index] === tablist) {
-      // return;
-      // }
+      if (initTabLists.length && initTabLists[index] == tablist) {
+        return;
+      }
 
       tablist.addEventListener('keydown', handleKeydownTabList);
 
-      // initTabLists.push(tablist);
+      initTabLists.push(tablist);
     });
 
     document.querySelectorAll(SELECTOR.TAB).forEach((tab, index) => {
-      // if (initTabs.length && initTabs[index] === tab.dataset.name) {
-      //   return;
-      // }
+      if (initTabs.length && initTabs[index] === tab) {
+        return;
+      }
 
       setupTab(tab);
 
       tab.addEventListener('click', handleClickTab);
 
-      // initTabs.push(tab.dataset.name);
+      initTabs.push(tab);
     });
+  };
+
+  const unInit = () => {
+    initTabLists.forEach((tablist) => {
+      tablist.removeEventListener('keydown', handleKeydownTabList);
+    });
+
+    initTabs.forEach((tab) => {
+      tab.removeEventListener('click', handleClickTab);
+    });
+
+    initTabLists.length = 0;
+    initTabs.length = 0;
   };
 
   const setupTab = (tab) => {
@@ -200,7 +213,9 @@ const uiTab = function () {
   };
 
   return {
-    init: initTab,
+    init,
+    unInit,
+    change: changeTab,
   };
 };
 

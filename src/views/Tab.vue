@@ -201,11 +201,15 @@
 
 <script setup>
 import UicCode from '@/components/UicCode.vue';
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 import { tab } from '@/assets/js/ui';
 
 onMounted(() => {
   tab.init();
+});
+
+onUnmounted(() => {
+  tab.unInit();
 });
 </script>
 
