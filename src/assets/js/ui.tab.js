@@ -45,22 +45,28 @@ const uiTab = function () {
   };
 
   const unInit = () => {
-    initTabLists.forEach((tablist) => {
-      tablist.removeEventListener('keydown', handleKeydownTabList);
-    });
+    if (initTabLists.length) {
+      initTabLists.forEach((tablist) => {
+        tablist.removeEventListener('keydown', handleKeydownTabList);
+      });
 
-    initTabs.forEach((tab) => {
-      tab.removeEventListener('click', handleClickTab);
-    });
+      initTabLists.length = 0;
+    }
 
-    initTabLists.length = 0;
-    initTabs.length = 0;
+    if (initTabs.length) {
+      initTabs.forEach((tab) => {
+        tab.removeEventListener('click', handleClickTab);
+      });
+
+      initTabs.length = 0;
+    }
   };
 
   const setupTab = (tab) => {
     const tabName = tab.dataset.name;
     const tabItem = tab.parentNode;
     const tabPanel = getTabPanelElement(tab);
+    const isSelected = tabItem.classList.contains('is-active');
 
     if (tabName && tabPanel) {
       if (!tab.id) {
@@ -75,7 +81,7 @@ const uiTab = function () {
       tabPanel.setAttribute('aria-labelledby', tab.id);
     }
 
-    if (tabItem.classList.contains('is-active')) {
+    if (isSelected) {
       openTab(tab);
     } else {
       closeTab(tab);
@@ -92,8 +98,9 @@ const uiTab = function () {
     const tabList = tab.closest(SELECTOR.TABLIST);
     const tabItem = tab.parentNode;
     const tabPanel = getTabPanelElement(tab);
+    const isSelected = tabItem.classList.contains('is-active');
 
-    if (tabItem.classList.contains('is-active')) {
+    if (isSelected) {
       return;
     }
 

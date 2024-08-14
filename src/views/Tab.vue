@@ -32,6 +32,10 @@
 
 
     <h2 class="uic-title">Tab Contents</h2>
+    <div class="uic-desc">
+      .tab 과 .tabpanel 의 [data-name] 을 같은 값으로 연결.
+
+    </div>
     <div class="uic-preview">
       <div class="tabnav">
         <ul class="tablist" role="tablist">
@@ -49,6 +53,7 @@
         </div>
         <div class="tabpanel" role="tabpanel" data-name="tab-a2">
           tabpanel-a2<br>
+          <input type="text"><br>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni aut explicabo nam, cupiditate eum modi qui ipsam autem consequuntur vitae! Error architecto quae id, consequuntur repellat, dolorum quia earum nulla vero vel saepe quis veritatis cum nobis quasi! Eveniet odit praesentium molestiae quis illo sint nesciunt quidem eaque, libero repellendus reprehenderit dolor impedit ducimus excepturi suscipit doloribus est autem ratione mollitia facere cumque! Eligendi veniam similique unde expedita accusantium ipsam vero distinctio eveniet molestias officia optio corporis omnis, vel aliquid maxime cumque dicta hic veritatis voluptas. Necessitatibus, qui tempore odio doloribus sed fugit maiores quibusdam, cupiditate ad iure expedita veniam?
         </div>
         <div class="tabpanel" role="tabpanel" data-name="tab-a3">
