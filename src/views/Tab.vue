@@ -34,10 +34,9 @@
     <h2 class="uic-title">Tab Contents</h2>
     <div class="uic-desc">
       .tab 과 .tabpanel 의 [data-name] 을 같은 값으로 연결.
-
     </div>
     <div class="uic-preview">
-      <div class="tabnav">
+      <div class="tabnav" data-ui="tabnav">
         <ul class="tablist" role="tablist">
           <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-a1">tab-a1</button></li>
           <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-a2">tab-a2</button></li>
@@ -67,7 +66,7 @@
       <br>
       <br>
 
-      <div class="tabnav">
+      <div class="tabnav" data-ui="tabnav">
         <ul class="tablist" role="tablist">
           <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-b1">tab-b1</button></li>
           <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-b2">tab-b2</button></li>
@@ -99,7 +98,7 @@
     <UicCode>
       {{
         `
-      <div class="tabnav">
+      <div class="tabnav" data-ui="tabnav">
         <ul class="tablist" role="tablist">
           <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-a1">tab-a1</button></li>
           <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-a2">tab-a2</button></li>
@@ -121,7 +120,7 @@
 
     <h2 class="uic-title">Full</h2>
     <div class="uic-preview">
-      <div class="tabnav full">
+      <div class="tabnav full" data-ui="tabnav">
         <ul class="tablist" role="tablist">
           <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-c1">tab-c1</button></li>
           <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-c2">tab-c2</button></li>
@@ -138,7 +137,7 @@
     <UicCode>
       {{
         `
-      <div class="tabnav full">
+      <div class="tabnav full" data-ui="tabnav">
         ...
       </div>
       `
@@ -147,7 +146,7 @@
 
     <h2 class="uic-title">Center</h2>
     <div class="uic-preview">
-      <div class="tabnav center">
+      <div class="tabnav center" data-ui="tabnav">
         <ul class="tablist" role="tablist">
           <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-d1">tab-d1</button></li>
           <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-d2">tab-d2</button></li>
@@ -157,13 +156,13 @@
       <div class="tabcontent">
         <div class="tabpanel is-active" role="tabpanel" data-name="tab-d1">tabpanel-d1</div>
         <div class="tabpanel" role="tabpanel" data-name="tab-d2">tabpanel-d2</div>
-        <div class="tabpanel" role="tabpanel" data-name="tab-d3">tabpanel-d3</div>
+        <!-- <div class="tabpanel" role="tabpanel" data-name="tab-d3">tabpanel-d3</div> -->
       </div>
     </div>
     <UicCode>
       {{
         `
-      <div class="tabnav center">
+      <div class="tabnav center" data-ui="tabnav">
         ...
       </div>
       `
@@ -172,7 +171,7 @@
 
     <h2 class="uic-title">Scroll</h2>
     <div class="uic-preview">
-      <div class="tabnav full">
+      <div class="tabnav full" data-ui="tabnav">
         <ul class="tablist" role="tablist">
           <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-e1">tab-e1</button></li>
           <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-e2">tab-e2</button></li>
@@ -201,6 +200,15 @@
       </div>
     </div>
 
+
+<!--
+      <div id="testdiv"></div>
+
+      <button type="button" class="btn" @click="testTabInit">tab.init()</button>
+      <button type="button" class="btn" @click="testSetupTabNav">tab.setupTabNav()</button>
+      <button type="button" class="btn" @click="testSetupTab">tab.setupTab()</button>
+      <button type="button" class="btn" @click="testTabnavAdd">tabnav add</button>
+      <button type="button" class="btn" @click="testTabAdd">tab add</button> -->
   </div>
 </template>
 
@@ -209,12 +217,57 @@ import UicCode from '@/components/UicCode.vue';
 import { onMounted, onUnmounted } from 'vue';
 import { tab } from '@/assets/js/ui';
 
+const testTabInit = () => {
+  tab.init();
+};
+const testSetupTabNav = () => {
+  tab.setupTabNav('#tabnav-test');
+};
+const testSetupTab = () => {
+  tab.setupTab('[data-name="tab-test5"]');
+};
+const testTabnavAdd = () => {
+  const testdiv = document.querySelector('#testdiv');
+
+  let testHtml = `
+      <div class="tabnav" data-ui="tabnav" id="tabnav-test">
+        <ul class="tablist" role="tablist" id="tablist-test">
+          <li class="tabitem is-active" role="none"><button type="button" class="tab" role="tab" data-name="tab-test1">tab-test1</button></li>
+          <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-test2">tab-test2</button></li>
+          <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-test3">tab-test3</button></li>
+          <li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-test4">tab-test4</button></li>
+        </ul>
+        </div>
+
+        `;
+  // <div class="tabcontent">
+  //   <div class="tabpanel is-active" role="tabpanel" data-name="tab-test1">tabpanel-test1</div>
+  //   <div class="tabpanel" role="tabpanel" data-name="tab-test2">tabpanel-test2</div>
+  //   <div class="tabpanel" role="tabpanel" data-name="tab-test3">tabpanel-test3</div>
+  //   <div class="tabpanel" role="tabpanel" data-name="tab-test4">tabpanel-test4</div>
+  // </div>
+
+  testdiv.innerHTML = testHtml;
+};
+const testTabAdd = () => {
+  const testdiv = document.querySelector('#testdiv');
+  const testTabNav = document.querySelector('#tabnav-test');
+
+  let tabHtml = `<li class="tabitem" role="none"><button type="button" class="tab" role="tab" data-name="tab-test5">tab-test5</button></li>`;
+  let tabpanelHtml = `<div class="tabpanel" role="tabpanel" data-name="tab-test5">tabpanel-test5</div>`;
+
+  testTabNav.querySelector('.tablist').insertAdjacentHTML('beforeend', tabHtml);
+  testTabNav
+    .querySelector('.tabcontent')
+    .insertAdjacentHTML('beforeend', tabpanelHtml);
+};
+
 onMounted(() => {
   tab.init();
 });
 
 onUnmounted(() => {
-  tab.unInit();
+  // tab.unInit();
 });
 </script>
 

@@ -1,0 +1,248 @@
+@use '../utils' as *;
+
+// init style
+[data-ui='dropdown'] {
+  position: relative;
+
+  [data-dropdown='toggle'] {
+  }
+
+  [data-dropdown='menu'] {
+    z-index: 800;
+    overflow: hidden;
+    visibility: hidden;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: visibility 0.0001s;
+
+    &[aria-hidden='false'] {
+      position: absolute;
+      pointer-events: auto;
+    }
+  }
+
+  &.is-expanded {
+    [data-dropdown='menu'] {
+      visibility: visible;
+    }
+  }
+
+  &.drop-down {
+    [data-dropdown='menu'] {
+      top: 100%;
+      bottom: auto;
+    }
+  }
+  &.drop-up {
+    [data-dropdown='menu'] {
+      top: auto;
+      bottom: 100%;
+    }
+  }
+  &.drop-left {
+    [data-dropdown='menu'] {
+      left: 0;
+      right: auto;
+    }
+  }
+  &.drop-right {
+    [data-dropdown='menu'] {
+      left: 0;
+      right: auto;
+    }
+  }
+  &.drop-center {
+    [data-dropdown='menu'] {
+      left: 50%;
+    }
+  }
+  &.drop-alignend,
+  &.drop-alignstart {
+    [data-dropdown='menu'] {
+      left: 0;
+    }
+  }
+  &.drop-full {
+    [data-dropdown='menu'] {
+      overflow: hidden;
+      left: 0;
+      right: 0;
+      white-space: normal;
+      word-break: keep-all;
+      word-wrap: break-word;
+    }
+  }
+}
+
+// default style
+.dropdown {
+  display: inline-flex;
+  .dropdown-toggle {
+  }
+  .dropdown-menu {
+    transition: visibility 0s ease 0.15s;
+
+    > ul {
+      padding: 0.4rem;
+      border: 1px solid #ddd;
+      border-radius: 0.4rem;
+      background-color: #fff;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
+      text-align: left;
+
+      opacity: 0;
+      transform: scale(0.6);
+
+      transition:
+        transform 0.15s ease 0s,
+        opacity 0.15s ease 0s;
+
+      > li {
+        .dropdown-item {
+          display: block;
+          width: 100%;
+          margin: 0;
+          padding: 0.6rem 1.2rem;
+          border: 0;
+          background: none;
+          text-align: left;
+          cursor: pointer;
+
+          @include hover {
+            background-color: rgba(0, 0, 0, 0.05);
+          }
+        }
+      }
+    }
+  }
+  &.drop-down {
+    .dropdown-menu {
+      padding: 0.4rem 0 0 0;
+
+      > ul {
+        transform-origin: top;
+      }
+    }
+  }
+  &.drop-up {
+    .dropdown-menu {
+      padding: 0 0 0.4rem 0;
+
+      > ul {
+        transform-origin: bottom;
+      }
+    }
+  }
+  &.drop-left {
+    .dropdown-menu {
+      padding: 0 0.4rem 0 0;
+
+      > ul {
+        transform-origin: right top;
+      }
+    }
+
+    &.drop-up {
+      .dropdown-menu {
+        ul {
+          transform-origin: right bottom;
+        }
+      }
+    }
+  }
+  &.drop-right {
+    .dropdown-menu {
+      padding: 0 0 0 0.4rem;
+
+      > ul {
+        transform-origin: left top;
+      }
+    }
+
+    &.drop-up {
+      .dropdown-menu {
+        ul {
+          transform-origin: left bottom;
+        }
+      }
+    }
+  }
+  &.drop-full {
+    .dropdown-menu {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+
+      > ul {
+        // transform-origin: left top;
+      }
+    }
+  }
+
+  // is-expanded
+  &.is-expanded {
+    .dropdown-menu {
+      transition: visibility 0s ease 0s;
+
+      > ul {
+        opacity: 1;
+        transform: scale(1);
+
+        transition:
+          transform 0.15s ease 0s,
+          opacity 0.15s ease 0s;
+      }
+    }
+
+    &.drop-down {
+      .dropdown-menu {
+        > ul {
+        }
+      }
+    }
+    &.drop-up {
+      .dropdown-menu {
+        > ul {
+        }
+      }
+    }
+    &.drop-left {
+      .dropdown-menu {
+        > ul {
+        }
+      }
+    }
+    &.drop-right {
+      .dropdown-menu {
+      }
+    }
+  }
+
+  // // is-transition
+  // &.is-transition {
+  //   .dropdown-menu {
+  //     transition: visibility 0s ease 0.15s;
+
+  //     > ul {
+  //       transition:
+  //         transform 0.15s ease 0s,
+  //         opacity 0.15s ease 0s;
+  //     }
+  //   }
+  // }
+
+  // // is-transition is-expanded
+  // &.is-transition.is-expanded {
+  //   .dropdown-menu {
+  //     transition: visibility 0s ease 0s;
+
+  //     > ul {
+  //       transition:
+  //         transform 0.15s ease 0s,
+  //         opacity 0.15s ease 0s;
+  //     }
+  //   }
+  // }
+}

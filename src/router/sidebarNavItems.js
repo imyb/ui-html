@@ -66,13 +66,13 @@ const sidebarNavItems = [
     path: '/toast',
     name: 'Toast',
     component: () => import('@/views/Toast.vue'),
-    disabled: false,
+    disabled: true,
   },
   {
     path: '/dorpdown',
     name: 'Dropdown',
     component: () => import('@/views/Dropdown.vue'),
-    disabled: true,
+    disabled: false,
   },
   {
     path: '/tooltip',

@@ -1,6 +1,7 @@
 .accordion {
-  .accordion-trigger {
+  .accordion-title {
     display: block;
+    position: relative;
     width: 100%;
     margin: 0;
     padding: 1.6rem;
@@ -9,9 +10,38 @@
     text-align: left;
     cursor: pointer;
 
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(50% - 0.8rem);
+      right: 1.6rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%23636363' d='M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: rotate(180deg);
+    }
+
+    &:not(button) {
+      cursor: auto;
+      &:before {
+        display: none;
+      }
+    }
+
     &[aria-expanded='true'] {
-      box-shadow: inset 0 -0.1rem 0 #ddd;
       background-color: #0000000d;
+      box-shadow: inset 0 -0.1rem 0 #ddd;
+
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
     }
   }
 
@@ -67,7 +97,7 @@
     }
 
     &.is-active {
-      .accordion-trigger {
+      .accordion-title {
         box-shadow: inset 0 -0.1rem 0 #ddd;
         background-color: #0000000d;
       }

@@ -1,9 +1,11 @@
 import uiTab from './ui.tab';
 import uiAccordion from './ui.accordion';
-// import uiModal from './ui.modal';
+import uiDropdown from './ui.dropdown';
+import uiModal from './ui.modal';
 
 const tab = uiTab();
 const accordion = uiAccordion();
-// const modal = uiModal();
+const dropdown = uiDropdown();
+const modal = uiModal();
 
-export { tab, accordion };
+export { tab, accordion, dropdown, modal };
