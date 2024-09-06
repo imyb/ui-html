@@ -1,7 +1,7 @@
 @use '../utils' as *;
 
 .btn {
-  --btn-base-color: #373bf6;
+  --btn-base-color: #0067b8;
   --btn-base-text-color: #fff;
 
   --btn-height: 4.8rem;
@@ -18,7 +18,7 @@
   --btn-line-height: normal;
   --btn-text-color: var(--btn-base-text-color);
 
-  --btn-hover-base-color: #0004ff;
+  --btn-hover-base-color: #025ea4;
   --btn-hover-base-text-color: var(--btn-base-text-color);
   --btn-hover-border-color: var(--btn-hover-base-color);
   --btn-hover-background-color: var(--btn-hover-base-color);
@@ -72,64 +72,61 @@
     color: var(--btn-hover-text-color);
   }
 
-  &[data-size='xs'] {
+  &[class*='xs'] {
     --btn-height: 3.2rem;
     --btn-padding-x: 0.6rem;
     --btn-padding-y: 0.2rem;
     --btn-font-size: 1.2rem;
   }
-  &[data-size='sm'] {
+  &[class*='sm'] {
     --btn-height: 4rem;
     --btn-padding-x: 0.8rem;
     --btn-padding-y: 0.4rem;
     --btn-font-size: 1.4rem;
   }
-  &[data-size='lg'] {
+  &[class*='lg'] {
     --btn-height: 5.6rem;
     --btn-padding-x: 1.8rem;
     --btn-padding-y: 0.6rem;
     --btn-font-size: 1.8rem;
   }
-  &[data-size='xl'] {
+  &[class*='xl'] {
     --btn-height: 6.4rem;
     --btn-padding-x: 2.4rem;
     --btn-padding-y: 0.6rem;
     --btn-font-size: 2.4rem;
   }
 
-  &[data-type*='prime'] {
-    --btn-base-color: #373bf6;
-    --btn-base-text-color: #fff;
-    --btn-hover-base-color: #0004e2;
+  &[class*='prime'] {
   }
-  &[data-type*='second'] {
-    --btn-base-color: #989898;
+  &[class*='second'] {
+    --btn-base-color: #999999;
     --btn-base-text-color: #fff;
-    --btn-hover-base-color: #797979;
+    --btn-hover-base-color: #909090;
   }
-  &[data-type*='third'] {
-    --btn-base-color: #008d59;
+  &[class*='third'] {
+    --btn-base-color: #00784c;
     --btn-base-text-color: #fff;
-    --btn-hover-base-color: #00784c;
+    --btn-hover-base-color: #006241;
   }
-  &[data-type*='fourth'] {
+  &[class*='fourth'] {
     --btn-base-color: #a80000;
     --btn-base-text-color: #fff;
     --btn-hover-base-color: #810000;
   }
 
-  &[data-type*='dark'] {
+  &[class*='dark'] {
     --btn-base-color: #303030;
     --btn-base-text-color: #fff;
     --btn-hover-base-color: #000000;
   }
-  &[data-type*='light'] {
+  &[class*='light'] {
     --btn-base-color: #eee;
     --btn-base-text-color: #000;
     --btn-hover-base-color: #dfdfdf;
   }
 
-  &[data-type*='outline'] {
+  &[class*='outline'] {
     --btn-border-width: 0.2rem;
     --btn-background-color: transparent;
     --btn-text-color: var(--btn-base-color);
@@ -141,16 +138,16 @@
     --btn-disabled-background-color: var(--btn-background-color);
   }
 
-  &[data-type*='round'] {
+  &[class*='round'] {
     --btn-border-radius: var(--btn-height);
   }
 
-  &[data-type*='light'][data-type*='outline'] {
+  &[class*='light'][class*='outline'] {
     --btn-text-color: var(--btn-base-text-color);
     --btn-disabled-base-text-color: var(--btn-base-text-color);
   }
 
-  &[data-addon*='icon'] {
+  &[class*='icon'] {
     > i,
     svg {
       // width: 1.6rem;
@@ -158,14 +155,14 @@
       // background: red;
       margin: 0 0.8rem 0 0;
     }
-    &[data-addon*='right'] {
+    &[class*='icon-right'] {
       > i,
       svg {
         margin: 0 0 0 0.8rem;
         order: 2;
       }
     }
-    &[data-addon*='only'] {
+    &[class*='icon-only'] {
       > i,
       svg {
         margin: 0;

@@ -23,99 +23,99 @@
 
     <h2 class="uic-title">Color</h2>
     <div class="uic-preview">
-      <button type="button" class="btn" data-type="prime">prime</button>
-      <button type="button" class="btn" data-type="second">second</button>
-      <button type="button" class="btn" data-type="third">third</button>
-      <button type="button" class="btn" data-type="fourth">fourth</button>
-      <button type="button" class="btn" data-type="dark">dark</button>
-      <button type="button" class="btn" data-type="light">light</button>
+      <button type="button" class="btn prime">prime</button>
+      <button type="button" class="btn second">second</button>
+      <button type="button" class="btn third">third</button>
+      <button type="button" class="btn fourth">fourth</button>
+      <button type="button" class="btn dark">dark</button>
+      <button type="button" class="btn light">light</button>
     </div>
     <UicCode>
       {{ `
-      <button type="button" class="btn" data-type="prime">prime</button>
-      <button type="button" class="btn" data-type="second">second</button>
-      <button type="button" class="btn" data-type="third">third</button>
-      <button type="button" class="btn" data-type="fourth">fourth</button>
-      <button type="button" class="btn" data-type="dark">dark</button>
-      <button type="button" class="btn" data-type="light">light</button>
+      <button type="button" class="btn prime">prime</button>
+      <button type="button" class="btn second">second</button>
+      <button type="button" class="btn third">third</button>
+      <button type="button" class="btn fourth">fourth</button>
+      <button type="button" class="btn dark">dark</button>
+      <button type="button" class="btn light">light</button>
       ` }}
     </UicCode>
 
     <h2 class="uic-title">Outline</h2>
     <div class="uic-preview">
-      <button type="button" class="btn" data-type="prime-outline">outline</button>
-      <button type="button" class="btn" data-type="second-outline">outline</button>
-      <button type="button" class="btn" data-type="third-outline">outline</button>
-      <button type="button" class="btn" data-type="fourth-outline">outline</button>
-      <button type="button" class="btn" data-type="dark-outline">outline</button>
-      <button type="button" class="btn" data-type="light-outline">outline</button>
+      <button type="button" class="btn prime-outline">outline</button>
+      <button type="button" class="btn second-outline">outline</button>
+      <button type="button" class="btn third-outline">outline</button>
+      <button type="button" class="btn fourth-outline">outline</button>
+      <button type="button" class="btn dark-outline">outline</button>
+      <button type="button" class="btn light-outline">outline</button>
     </div>
     <UicCode>
       {{ `
-      <button type="button" class="btn" data-type="prime-outline">outline</button>
-      <button type="button" class="btn" data-type="second-outline">outline</button>
-      <button type="button" class="btn" data-type="third-outline">outline</button>
-      <button type="button" class="btn" data-type="fourth-outline">outline</button>
-      <button type="button" class="btn" data-type="dark-outline">outline</button>
-      <button type="button" class="btn" data-type="light-outline">outline</button>
+      <button type="button" class="btn prime-outline">outline</button>
+      <button type="button" class="btn second-outline">outline</button>
+      <button type="button" class="btn third-outline">outline</button>
+      <button type="button" class="btn fourth-outline">outline</button>
+      <button type="button" class="btn dark-outline">outline</button>
+      <button type="button" class="btn light-outline">outline</button>
       ` }}
     </UicCode>
 
     <h2 class="uic-title">Round</h2>
     <div class="uic-preview">
-      <button type="button" class="btn" data-type="prime-round">round</button>
-      <button type="button" class="btn" data-type="second-round">round</button>
-      <button type="button" class="btn" data-type="third-round">round</button>
-      <button type="button" class="btn" data-type="fourth-round">round</button>
-      <button type="button" class="btn" data-type="dark-round">round</button>
-      <button type="button" class="btn" data-type="light-round">round</button>
+      <button type="button" class="btn prime-round">round</button>
+      <button type="button" class="btn second-round">round</button>
+      <button type="button" class="btn third-round">round</button>
+      <button type="button" class="btn fourth-round">round</button>
+      <button type="button" class="btn dark-round">round</button>
+      <button type="button" class="btn light-round">round</button>
     </div>
     <UicCode>
       {{ `
-      <button type="button" class="btn" data-type="prime-round">round</button>
-      <button type="button" class="btn" data-type="second-round">round</button>
-      <button type="button" class="btn" data-type="third-round">round</button>
-      <button type="button" class="btn" data-type="fourth-round">round</button>
-      <button type="button" class="btn" data-type="dark-round">round</button>
-      <button type="button" class="btn" data-type="light-round">round</button>
+      <button type="button" class="btn prime-round">round</button>
+      <button type="button" class="btn second-round">round</button>
+      <button type="button" class="btn third-round">round</button>
+      <button type="button" class="btn fourth-round">round</button>
+      <button type="button" class="btn dark-round">round</button>
+      <button type="button" class="btn light-round">round</button>
       ` }}
     </UicCode>
 
     <h2 class="uic-title">Outline Round</h2>
     <div class="uic-preview">
-      <button type="button" class="btn" data-type="prime-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="second-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="third-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="fourth-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="dark-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="light-outline-round">outline-round</button>
+      <button type="button" class="btn prime-outline-round">outline-round</button>
+      <button type="button" class="btn second-outline-round">outline-round</button>
+      <button type="button" class="btn third-outline-round">outline-round</button>
+      <button type="button" class="btn fourth-outline-round">outline-round</button>
+      <button type="button" class="btn dark-outline-round">outline-round</button>
+      <button type="button" class="btn light-outline-round">outline-round</button>
     </div>
     <UicCode>
       {{ `
-      <button type="button" class="btn" data-type="prime-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="second-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="third-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="fourth-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="dark-outline-round">outline-round</button>
-      <button type="button" class="btn" data-type="light-outline-round">outline-round</button>
+      <button type="button" class="btn prime-outline-round">outline-round</button>
+      <button type="button" class="btn second-outline-round">outline-round</button>
+      <button type="button" class="btn third-outline-round">outline-round</button>
+      <button type="button" class="btn fourth-outline-round">outline-round</button>
+      <button type="button" class="btn dark-outline-round">outline-round</button>
+      <button type="button" class="btn light-outline-round">outline-round</button>
       ` }}
     </UicCode>
 
     <h2 class="uic-title">Size</h2>
     <div class="uic-preview">
-      <button type="button" class="btn" data-type="prime" data-size="xs">xs button</button>
-      <button type="button" class="btn" data-type="prime" data-size="sm">sm button</button>
-      <button type="button" class="btn" data-type="prime" data-size="md">md button</button>
-      <button type="button" class="btn" data-type="prime" data-size="lg">lg button</button>
-      <button type="button" class="btn" data-type="prime" data-size="xl">xl button</button>
+      <button type="button" class="btn xs">xs button</button>
+      <button type="button" class="btn sm">sm button</button>
+      <button type="button" class="btn md">md button</button>
+      <button type="button" class="btn lg">lg button</button>
+      <button type="button" class="btn xl">xl button</button>
     </div>
     <UicCode>
       {{ `
-      <button type="button" class="btn" data-type="prime" data-size="xs">xs button</button>
-      <button type="button" class="btn" data-type="prime" data-size="sm">sm button</button>
-      <button type="button" class="btn" data-type="prime" data-size="md">md button</button>
-      <button type="button" class="btn" data-type="prime" data-size="lg">lg button</button>
-      <button type="button" class="btn" data-type="prime" data-size="xl">xl button</button>
+      <button type="button" class="btn xs">xs button</button>
+      <button type="button" class="btn sm">sm button</button>
+      <button type="button" class="btn md">md button</button>
+      <button type="button" class="btn lg">lg button</button>
+      <button type="button" class="btn xl">xl button</button>
       ` }}
     </UicCode>
 
@@ -139,15 +139,15 @@
 
     <h2 class="uic-title">Addon Icon</h2>
     <div class="uic-preview">
-      <button type="button" class="btn" data-addon="icon"><i class="fa-solid fa-check"></i> button</button>
-      <button type="button" class="btn" data-type="second" data-addon="icon-right"><i class="fa-solid fa-check"></i> button</button>
-      <button type="button" class="btn" data-addon="icon-only" aria-label="label"><i class="fa-solid fa-check"></i></button>
+      <button type="button" class="btn icon"><i class="fa-solid fa-check"></i> button</button>
+      <button type="button" class="btn second icon-right"><i class="fa-solid fa-check"></i> button</button>
+      <button type="button" class="btn icon-only" aria-label="label"><i class="fa-solid fa-check"></i></button>
     </div>
     <UicCode>
       {{ `
-      <button type="button" class="btn" data-addon="icon"><i class="fa-solid fa-check"></i> button</button>
-      <button type="button" class="btn" data-type="second" data-addon="icon-right"><i class="fa-solid fa-check"></i> button</button>
-      <button type="button" class="btn" data-addon="icon-only" aria-label="label"><i class="fa-solid fa-check"></i></button>
+      <button type="button" class="btn"><i class="fa-solid fa-check"></i> button</button>
+      <button type="button" class="btn second"><i class="fa-solid fa-check"></i> button</button>
+      <button type="button" class="btn" aria-label="label"><i class="fa-solid fa-check"></i></button>
       ` }}
     </UicCode>
 
@@ -155,23 +155,23 @@
     <h2 class="uic-title">Button Group</h2>
     <div class="uic-preview">
       <div class="btn-group">
-        <button type="button" class="btn" data-type="outline">button</button>
-        <button type="button" class="btn" data-type="outline">button</button>
+        <button type="button" class="btn outline">button</button>
+        <button type="button" class="btn outline">button</button>
       </div>
       <div class="btn-group">
-        <button type="button" class="btn" data-type="">button</button>
-        <button type="button" class="btn" data-type="second">button</button>
-        <button type="button" class="btn" data-type="third">button</button>
+        <button type="button" class="btn ">button</button>
+        <button type="button" class="btn second">button</button>
+        <button type="button" class="btn third">button</button>
       </div>
 
       <div class="btn-group tight">
-        <button type="button" class="btn" data-type="outline">button</button>
-        <button type="button" class="btn" data-type="outline">button</button>
+        <button type="button" class="btn outline">button</button>
+        <button type="button" class="btn outline">button</button>
       </div>
       <div class="btn-group tight">
-        <button type="button" class="btn" data-type="">button</button>
-        <button type="button" class="btn" data-type="second">button</button>
-        <button type="button" class="btn" data-type="third">button</button>
+        <button type="button" class="btn ">button</button>
+        <button type="button" class="btn second">button</button>
+        <button type="button" class="btn third">button</button>
       </div>
     </div>
     <UicCode>
@@ -190,22 +190,22 @@
     <div class="uic-preview">
       <div class="btn-panel">
         <div class="left">
-          <button type="button" class="btn" data-type="outline">button</button>
-          <button type="button" class="btn" data-type="outline">button</button>
+          <button type="button" class="btn outline">button</button>
+          <button type="button" class="btn outline">button</button>
         </div>
         <div class="right">
           <div class="btn-group tight">
-            <button type="button" class="btn" data-type="outline">button</button>
-            <button type="button" class="btn" data-type="outline">button</button>
+            <button type="button" class="btn outline">button</button>
+            <button type="button" class="btn outline">button</button>
           </div>
         </div>
       </div>
 
       <div class="btn-panel">
         <div class="btn-group tight">
-          <button type="button" class="btn" data-type="">button</button>
-          <button type="button" class="btn" data-type="second">button</button>
-          <button type="button" class="btn" data-type="third">button</button>
+          <button type="button" class="btn ">button</button>
+          <button type="button" class="btn second">button</button>
+          <button type="button" class="btn third">button</button>
         </div>
       </div>
     </div>

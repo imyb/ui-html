@@ -1,0 +1,213 @@
+.modal {
+  --modal-width: 100%;
+  --modal-max-width: 80rem;
+  --modal-padding-x: 1.6rem;
+  --modal-padding-y: 1.6rem;
+
+  z-index: 9000;
+  visibility: hidden;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--modal-padding-y) var(--modal-padding-x);
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  // transition: visibility 0.00001s;
+  transition:
+    visibility 0s ease 0.3s,
+    background-color 0.3s ease 0s;
+
+  .modal-window {
+    display: inline-flex;
+    flex-direction: column;
+    width: var(--modal-width);
+    max-width: var(--modal-max-width);
+    border-radius: 0.4rem;
+    background-color: #fff;
+    box-shadow: 0 0 1.6rem 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+
+    transition: opacity 0.3s ease 0s;
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    padding: 1.6rem;
+
+    .modal-title {
+      font-size: 2rem;
+    }
+
+    .modal-close {
+      flex: none;
+      display: block;
+      width: 3.2rem;
+      height: 3.2rem;
+      margin: 0 0 0 auto;
+      border: 0;
+      background: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3C!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%23636363' d='M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 2.4rem 2.4rem;
+      cursor: pointer;
+    }
+  }
+
+  .modal-body {
+    padding: 1.6rem;
+  }
+
+  .modal-footer {
+    padding: 1.6rem;
+  }
+
+  // modal show
+  &.is-show {
+    display: flex;
+    pointer-events: auto;
+  }
+  // modal open
+  &.is-open {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    transition:
+      visibility 0s ease 0s,
+      background-color 0.3s ease 0s;
+
+    .modal-window {
+      opacity: 1;
+
+      transition: opacity 0.3s ease 0s;
+    }
+  }
+}
+
+.modal.xs {
+  --modal-max-width: 34rem;
+}
+
+.modal.sm {
+  --modal-max-width: 50rem;
+}
+.modal.lg {
+  --modal-max-width: 100rem;
+}
+.modal.xl {
+  --modal-max-width: 120rem;
+}
+
+.modal.fullscreen {
+  --modal-max-width: auto;
+  --modal-padding-x: 0;
+  --modal-padding-y: 0;
+
+  .modal-window {
+    max-height: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    border-radius: 0;
+    box-shadow: 0;
+  }
+  .modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.modal.bottomsheet {
+  overflow: hidden;
+  align-items: flex-end;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+
+  .modal-window {
+    max-height: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    opacity: 1;
+    transform: translate(0, 100%);
+
+    transition: transform 0.3s ease 0s;
+  }
+  .modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &.is-open {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    transition:
+      visibility 0s ease 0s,
+      background-color 0.3s ease 0s;
+
+    .modal-window {
+      opacity: 1;
+      transform: translate(0, 0);
+
+      transition: transform 0.3s ease 0s;
+    }
+  }
+}
+
+// modal scroll
+.modal.scroll {
+  .modal-window {
+    max-height: 100%;
+  }
+  .modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.modal.lock {
+  @keyframes headShake {
+    0% {
+      transform: translateY(0);
+    }
+
+    6.5% {
+      transform: translateY(-3px);
+    }
+
+    18.5% {
+      transform: translateY(2px);
+    }
+
+    31.5% {
+      transform: translateY(-3px);
+    }
+
+    43.5% {
+      transform: translateY(2px);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
+  }
+
+  &.lockShake {
+    .modal-window {
+      animation-name: headShake;
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
