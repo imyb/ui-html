@@ -7,7 +7,7 @@ const uiModal = function () {
   };
 
   /**
-   * '[data-modal="close"]' 요소를 클릭
+   * '[data-modal="close"]' 요소를 클릭 닫기
    * @param {clickEvent} event
    */
   const handleClickModalClose = (event) => {
@@ -17,7 +17,7 @@ const uiModal = function () {
   };
 
   /**
-   * 모달 바깥쪽 클릭
+   * 모달 바깥쪽 클릭 닫기
    * @param {clickEvent} event
    */
   const handleClickModalOutside = (event) => {
@@ -36,11 +36,11 @@ const uiModal = function () {
   };
 
   /**
-   * 모달 키보드 입력
+   * Esc키로 닫기
    * @param {clickEvent} event
    */
-  const handleKeydownModal = (event) => {
-    const modal = event.target;
+  const handleKeydownModalEscape = (event) => {
+    const modal = event.target.closest(SELECTOR.MODAL);
 
     if (event.key === 'Escape') {
       if (modal.classList.contains('lock')) {
@@ -48,10 +48,6 @@ const uiModal = function () {
       } else {
         closeModal(modal);
       }
-    }
-
-    if (event.key === 'Tab') {
-      focusTrapModal(event);
     }
   };
 
@@ -90,85 +86,6 @@ const uiModal = function () {
     });
 
     return openedModals;
-  };
-
-  /**
-   * css transition 속성 중 가장 마지막 transition 가져오기
-   * @param {Array} element
-   * @returns
-   */
-  const getModalTransition = (element) => {
-    const elements = Array.isArray(element) ? element : [element];
-    const transitions = [];
-
-    elements.forEach((element) => {
-      const transitionPropertyNames =
-        getComputedStyle(element).transitionProperty.split(',');
-      const transitionDurations =
-        getComputedStyle(element).transitionDuration.split(',');
-      const transitionDelays =
-        getComputedStyle(element).transitionDelay.split(',');
-
-      transitionPropertyNames.forEach((transitionPropertyName, index) => {
-        const propertyName = transitionPropertyNames[index].trim();
-        const duration = parseFloat(transitionDurations[index].trim());
-        const delay = parseFloat(transitionDelays[index].trim());
-        const totalTime = duration + delay;
-
-        transitions.push({
-          element,
-          propertyName,
-          duration,
-          delay,
-          totalTime,
-        });
-      });
-    });
-
-    const lastTime = Math.max(
-      ...transitions.map((transition) => transition.totalTime)
-    );
-
-    const lastTransition = transitions.filter(
-      (transition) => transition.totalTime == lastTime
-    )[0];
-
-    if (!lastTime) {
-      return;
-    }
-
-    return lastTransition;
-  };
-
-  /**
-   * 모달 열고 닫을 때 transition 이 완료 된 후 callback 호출
-   * @param {HTMLElement} modal
-   * @param {function} callback
-   */
-  const completeTransitionModal = (modal, callback) => {
-    const modalTransition = getModalTransition([
-      modal,
-      modal.firstElementChild,
-    ]);
-
-    const handleTransitionEndModal = (event) => {
-      if (
-        event.propertyName !== modalTransition.propertyName ||
-        event.target !== modalTransition.element
-      ) {
-        return;
-      }
-
-      callback();
-
-      modal.removeEventListener('transitionend', handleTransitionEndModal);
-    };
-
-    if (modalTransition) {
-      modal.addEventListener('transitionend', handleTransitionEndModal);
-    } else {
-      callback();
-    }
   };
 
   /**
@@ -223,10 +140,11 @@ const uiModal = function () {
     }
 
     modal.focus();
+    modal.focusTrap('lock');
 
     modal.dispatchEvent(new CustomEvent('modal:open'));
 
-    completeTransitionModal(modal, () => {
+    modal.onTransitionComplete(() => {
       modal.dispatchEvent(new CustomEvent('modal:opened'));
     });
 
@@ -234,7 +152,7 @@ const uiModal = function () {
       modalClose.addEventListener('click', handleClickModalClose);
     });
     modal.addEventListener('click', handleClickModalOutside);
-    modal.addEventListener('keydown', handleKeydownModal);
+    modal.addEventListener('keydown', handleKeydownModalEscape);
   };
 
   /**
@@ -262,11 +180,12 @@ const uiModal = function () {
 
     modal.classList.remove('is-open');
 
+    modal.focusTrap('unlock');
     modal.state.activeElement.focus();
 
     modal.dispatchEvent(new CustomEvent('modal:close'));
 
-    completeTransitionModal(modal, () => {
+    modal.onTransitionComplete(() => {
       modal.classList.remove('is-show');
 
       modal.dispatchEvent(new CustomEvent('modal:closed'));
@@ -282,48 +201,7 @@ const uiModal = function () {
       modalClose.removeEventListener('click', handleClickModalClose);
     });
     modal.removeEventListener('click', handleClickModalOutside);
-    modal.removeEventListener('keydown', handleKeydownModal);
-  };
-
-  /**
-   * 모달에서 탭키 이동 시 포커스가 모달 밖으로 나가지 않게 함
-   * @param {keydownEvent} event
-   */
-  const focusTrapModal = (event) => {
-    if (event.key !== 'Tab') {
-      return;
-    }
-
-    const modal = event.target.closest(SELECTOR.MODAL);
-    const elements = modal.querySelectorAll(
-      'a, area, input, select, textarea, button, iframe, object, embed, [tabindex], [contenteditable]'
-    );
-    const focusableElements = [];
-
-    elements.forEach((element) => {
-      if (
-        !element.hasAttribute('disabled') &&
-        element.tabIndex >= 0 &&
-        getComputedStyle(element).visibility !== 'hidden'
-      ) {
-        focusableElements.push(element);
-      }
-    });
-
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-
-    if (event.shiftKey) {
-      if (document.activeElement === firstElement) {
-        event.preventDefault();
-        lastElement.focus();
-      }
-    } else {
-      if (document.activeElement === lastElement) {
-        event.preventDefault();
-        firstElement.focus();
-      }
-    }
+    modal.removeEventListener('keydown', handleKeydownModalEscape);
   };
 
   return {

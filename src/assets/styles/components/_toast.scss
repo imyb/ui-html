@@ -1,0 +1,104 @@
+@use '../utils' as *;
+
+.toast-container {
+  z-index: 900;
+  position: fixed;
+  bottom: calc(0.8rem + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  pointer-events: none;
+}
+
+.toast {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0 1.6rem;
+
+  transform: translate(-50%, calc(100% + 1.6rem + env(safe-area-inset-bottom)));
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    visibility 0s ease 0.3s,
+    opacity 0.3s ease 0s,
+    transform 0.3s ease 0s,
+    max-height 0.3s ease 0.3s;
+
+  @include media('<xs') {
+    width: 100%;
+  }
+
+  .toast-window {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 35rem;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 1.6rem;
+    background: #fff;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.8rem;
+
+    @include media('<xs') {
+      min-width: 0;
+    }
+  }
+
+  .toast-msg {
+    flex: 1;
+  }
+
+  .toast-action {
+    margin-left: auto;
+  }
+  .toast-close {
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 0 0 0.8rem;
+    border: 0;
+    background: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3C!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%23636363' d='M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 1.8rem 1.8rem;
+    cursor: pointer;
+  }
+
+  &.is-stack {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, calc(100% + 1.6rem + env(safe-area-inset-bottom)));
+  }
+
+  &.is-open {
+    // visibility: visible;
+    // height: 50px;
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+
+    transition:
+      visibility 0s ease 0s,
+      transform 0.3s ease 0s,
+      opacity 0.3s ease 0s;
+
+    &.is-stack {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.toast.type2 {
+  .toast-window {
+    background: #333;
+    color: #ccc;
+  }
+}

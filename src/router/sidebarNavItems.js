@@ -66,7 +66,7 @@ const sidebarNavItems = [
     path: '/toast',
     name: 'Toast',
     component: () => import('@/views/Toast.vue'),
-    disabled: true,
+    disabled: false,
   },
   {
     path: '/dorpdown',
